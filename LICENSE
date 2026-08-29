@@ -12,5 +12,6 @@ DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
 AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-The skill markdown under skills/ is copied from the htmx project:
-https://github.com/bigskysoftware/htmx
+This repository is an unofficial packaging. The skill markdown under skills/
+is copied from the htmx project (https://github.com/bigskysoftware/htmx) and
+is not published by Big Sky Software as a Grok plugin.

@@ -1,4 +1,4 @@
-name: Sync official htmx skills
+name: Sync htmx skill files
 
 on:
   schedule:
@@ -30,15 +30,15 @@ jobs:
             scripts/sync.sh
           fi
 
-      - name: Commit if the official files changed
+      - name: Commit if upstream files changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add skills UPSTREAM
           if git diff --cached --quiet; then
-            echo "No official skill changes."
+            echo "No upstream skill file changes."
             exit 0
           fi
           REF="$(awk -F= '/^ref=/{print $2; exit}' UPSTREAM)"
-          git commit -m "Sync official htmx skills from ${REF}"
+          git commit -m "Sync htmx skill files from ${REF}"
           git push

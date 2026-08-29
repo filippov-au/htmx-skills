@@ -1,12 +1,12 @@
 {
-  "name": "htmx-official-skills",
-  "description": "Official htmx 4 agent skills from Big Sky Software (guidance, debugging, extension authoring, upgrade from htmx 2).",
+  "name": "htmx-skills",
+  "description": "Unofficial packaging of the htmx 4 skill files published in bigskysoftware/htmx. Not an official Big Sky or htmx release.",
   "version": "4.0.0",
   "author": {
-    "name": "Big Sky Software"
+    "name": "filippov-au"
   },
-  "homepage": "https://htmx.org",
-  "repository": "https://github.com/filippov-au/htmx-official-skills",
+  "homepage": "https://github.com/filippov-au/htmx-skills",
+  "repository": "https://github.com/filippov-au/htmx-skills",
   "license": "0BSD",
   "keywords": [
     "htmx",

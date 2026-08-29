@@ -1,12 +1,15 @@
-# Official htmx skills, packaged for Grok
+# Unofficial htmx skills pack for Grok
 
-Big Sky ships htmx 4 agent skills as flat markdown files in
+This is my packaging of the skill files that ship in the htmx repo. It is
+**not** an official Big Sky or htmx product.
+
+htmx publishes agent skills as flat markdown in
 [`dist/skills/`](https://github.com/bigskysoftware/htmx/tree/v4.0.0/dist/skills).
-Those files have the right frontmatter, but they are **not** named `SKILL.md`,
-so `npx skills add bigskysoftware/htmx` and Grok’s plugin updater cannot track
+Those files have the right frontmatter, but they are not named `SKILL.md`, so
+`npx skills add bigskysoftware/htmx` and Grok’s plugin updater cannot track
 them.
 
-This repo copies those official files into the layout both tools expect:
+This repo copies those files into the layout both tools expect:
 
 ```
 skills/
@@ -16,8 +19,8 @@ skills/
   htmx-upgrade-from-htmx2/SKILL.md
 ```
 
-Content stays official. This repo only repacks it and records the upstream ref
-in `UPSTREAM`.
+I do not edit the skill bodies. I only rename them into folders and record the
+upstream ref in `UPSTREAM`.
 
 ## Install in Grok
 
@@ -25,18 +28,18 @@ After you push this repo to GitHub (replace `filippov-au` if needed):
 
 ```bash
 # Skills CLI — tracked, so check/update work
-npx skills add filippov-au/htmx-official-skills -g -a grok -y
+npx skills add filippov-au/htmx-skills -g -a grok -y
 
 # or Grok plugin
-grok plugin install filippov-au/htmx-official-skills --trust
+grok plugin install filippov-au/htmx-skills --trust
 ```
 
 From a local clone, before it is on GitHub:
 
 ```bash
-npx skills add /Users/sun/work/htmx-official-skills -g -a grok -y
+npx skills add /Users/sun/work/htmx-skills -g -a grok -y
 # or
-grok plugin install /Users/sun/work/htmx-official-skills --trust
+grok plugin install /Users/sun/work/htmx-skills --trust
 ```
 
 Pick **one** of those two install paths. Installing both copies the same skills
@@ -57,13 +60,13 @@ npx skills check
 npx skills update
 
 # Grok plugin install
-grok plugin update htmx-official-skills
+grok plugin update htmx-skills
 ```
 
-Those commands pull **this** repo. They pick up new official text only after
+Those commands pull **this** repo. They pick up new upstream text only after
 this repo is synced (script or GitHub Action below).
 
-## Sync official files
+## Sync from the htmx repo
 
 ```bash
 scripts/sync.sh           # ref from UPSTREAM, or v4.0.0
@@ -82,21 +85,19 @@ upstream changed. After you create the GitHub repo, enable Actions.
 From this directory:
 
 ```bash
-git init
-git add .
-git commit -m "Package official htmx 4 skills"
-gh repo create htmx-official-skills --public --source . --remote origin --push
+gh repo create htmx-skills --public --source . --remote origin --push
 ```
 
-Then install from `filippov-au/htmx-official-skills` as above.
+Then install from `filippov-au/htmx-skills` as above.
 
 Optional TUI marketplace:
 
 ```bash
-grok plugin marketplace add filippov-au/htmx-official-skills
+grok plugin marketplace add filippov-au/htmx-skills
 ```
 
 ## License
 
-Skill bodies are from [htmx](https://github.com/bigskysoftware/htmx) (0BSD).
-Packaging in this repo is also 0BSD.
+Skill bodies are copied from [htmx](https://github.com/bigskysoftware/htmx)
+(0BSD). Packaging in this repo is also 0BSD. Not affiliated with Big Sky
+Software.

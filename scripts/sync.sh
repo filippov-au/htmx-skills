@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copy official htmx agent skills into skills/<name>/SKILL.md.
+# Copy htmx skill files from upstream into skills/<name>/SKILL.md.
 #
 # Usage:
 #   scripts/sync.sh              # use UPSTREAM ref, or v4.0.0
@@ -24,7 +24,7 @@ REF="${REF:-$DEFAULT_REF}"
 API_URL="https://api.github.com/repos/${REPO}/contents/${PATH_IN_REPO}?ref=${REF}"
 RAW_BASE="https://raw.githubusercontent.com/${REPO}/${REF}/${PATH_IN_REPO}"
 
-echo "Syncing official skills from ${REPO}@${REF}:${PATH_IN_REPO}"
+echo "Syncing skill files from ${REPO}@${REF}:${PATH_IN_REPO}"
 
 LISTING="$(curl -fsSL -H "Accept: application/vnd.github+json" "$API_URL")"
 FILES_JSON="$(python3 -c '

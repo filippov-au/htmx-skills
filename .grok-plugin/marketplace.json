@@ -1,15 +1,15 @@
 {
-  "name": "htmx-official-skills",
-  "description": "Official htmx 4 agent skills from Big Sky Software, packaged for Grok.",
+  "name": "htmx-skills",
+  "description": "Unofficial packaging of htmx skill files for Grok. Not affiliated with Big Sky Software.",
   "owner": {
     "name": "filippov-au"
   },
   "plugins": [
     {
-      "name": "htmx-official-skills",
-      "description": "Official htmx 4 agent skills: guidance, debugging, extension authoring, and upgrade from htmx 2.",
+      "name": "htmx-skills",
+      "description": "Unofficial packaging of the htmx 4 skill files from bigskysoftware/htmx (guidance, debugging, extension authoring, upgrade from htmx 2).",
       "source": ".",
-      "homepage": "https://github.com/bigskysoftware/htmx",
+      "homepage": "https://github.com/filippov-au/htmx-skills",
       "keywords": ["htmx", "htmx4", "hypermedia"]
     }
   ]
