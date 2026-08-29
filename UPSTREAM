@@ -1,0 +1,5 @@
+repo=https://github.com/bigskysoftware/htmx
+ref=v4.0.0
+path=dist/skills
+synced_at=2026-08-29T01:04:43Z
+files=htmx-debugging.md htmx-extension-authoring.md htmx-guidance.md htmx-upgrade-from-htmx2.md

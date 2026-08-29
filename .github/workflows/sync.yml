@@ -1,0 +1,44 @@
+name: Sync official htmx skills
+
+on:
+  schedule:
+    - cron: "17 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "htmx git ref (tag, branch, or SHA). Empty uses UPSTREAM."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync from upstream
+        env:
+          HTMX_REF: ${{ inputs.ref }}
+        run: |
+          chmod +x scripts/sync.sh
+          if [ -n "$HTMX_REF" ]; then
+            scripts/sync.sh "$HTMX_REF"
+          else
+            scripts/sync.sh
+          fi
+
+      - name: Commit if the official files changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add skills UPSTREAM
+          if git diff --cached --quiet; then
+            echo "No official skill changes."
+            exit 0
+          fi
+          REF="$(awk -F= '/^ref=/{print $2; exit}' UPSTREAM)"
+          git commit -m "Sync official htmx skills from ${REF}"
+          git push

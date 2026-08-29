@@ -1,0 +1,17 @@
+{
+  "name": "htmx-official-skills",
+  "description": "Official htmx 4 agent skills from Big Sky Software (guidance, debugging, extension authoring, upgrade from htmx 2).",
+  "version": "4.0.0",
+  "author": {
+    "name": "Big Sky Software"
+  },
+  "homepage": "https://htmx.org",
+  "repository": "https://github.com/filippov-au/htmx-official-skills",
+  "license": "0BSD",
+  "keywords": [
+    "htmx",
+    "htmx4",
+    "hypermedia",
+    "html"
+  ]
+}
